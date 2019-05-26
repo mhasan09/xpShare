@@ -20,5 +20,6 @@ from shareapp.views import *
 urlpatterns = [
     path('', getIndex, name='index'),
     path('author/<name>', getProfile, name='author'),
+    path('article/<int:id>',getSingle, name = 'article'),
 
 ]
