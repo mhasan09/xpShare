@@ -25,7 +25,7 @@
 	{% if post.id > first.id %}
 	<a href="{% url 'article' id=post.id|add:'-1' %}" class="fh5co-post-prev"><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<i class="icon-chevron-with-circle-left"></i></span></a>
     {% endif %}
-    {% if post.id <= first.id %}
+    {% if post.id < last.id %}
 	<a href="{% url 'article' id=post.id|add:'1' %}" class="fh5co-post-next"><span><i class="icon-chevron-with-circle-right"></i>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</span></a>
     {% endif %}
 
