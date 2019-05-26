@@ -2,13 +2,18 @@ from django.shortcuts import render,get_object_or_404,redirect
 from .models import Article,Author,Category
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 # Create your views here.
-def getIndex(requests):
+def getIndex(request):
     post = Article.objects.all()
+    paginator = Paginator(post, 8)  # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    total_article = paginator.get_page(page)
     context = {
-        "post" : post
+        "post" : total_article
     }
-    return render(requests, "index.html", context)
+    return render(request, "index.html", context)
 
 def getProfile(request,name):
     post_author = get_object_or_404(User,username=name)
@@ -33,10 +38,14 @@ def getSingle(requests, id):
     }
     return render(requests, "single.html", context)
 
-def getTopic(requests, name):
+def getTopic(request, name):
     cat = get_object_or_404(Category,name=name)
     post = Article.objects.filter(category= cat.id)
-    return render(requests, "category.html" , {"post":post , "cat" : cat},)
+    paginator = Paginator(post, 8)  # Show 25 contacts per page
+
+    page = request.GET.get('page')
+    total_article = paginator.get_page(page)
+    return render(request, "category.html" , {"post":total_article , "cat" : cat},)
 
 def getLogin(request):
     if request.user.is_authenticated:
