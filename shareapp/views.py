@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from .models import Article,Author,Category
 from django.contrib.auth import authenticate,login,logout
-
+from django.contrib.auth.models import User
 # Create your views here.
 def getIndex(requests):
     post = Article.objects.all()
@@ -10,8 +10,15 @@ def getIndex(requests):
     }
     return render(requests, "index.html", context)
 
-def getProfile(requests,name):
-    return render(requests, "profile.html")
+def getProfile(request,name):
+    post_author = get_object_or_404(User,username=name)
+    auth = get_object_or_404(Author, name=post_author.id)
+    post = Article.objects.filter(article_author=auth.id)
+    context = {
+        "auth": auth,
+        "post": post
+    }
+    return render(request, "profile.html",context)
 
 def getSingle(requests, id):
     post = get_object_or_404(Article, pk=id)
