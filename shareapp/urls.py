@@ -23,6 +23,8 @@ urlpatterns = [
     path('article/<int:id>',getSingle, name = 'article'),
     path('topic/<name>',getTopic, name = 'topic'),
     path('login',getLogin, name = 'login'),
-    path('logout',getLogout, name = 'logout')
+    path('logout',getLogout, name = 'logout'),
+    path('create',getCreate, name = 'create'),
+
 
 ]
