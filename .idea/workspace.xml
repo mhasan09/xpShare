@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7a85bf5-7d30-4592-b3df-e04d2209135a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/shareapp/form.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shareapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shareapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shareapp/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/shareapp/form.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shareapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shareapp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1368">
@@ -59,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shareapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="77" column="69" selection-start-line="77" selection-start-column="69" selection-end-line="77" selection-end-column="69" />
+            <state relative-caret-position="193">
+              <caret line="84" column="26" lean-forward="true" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
               </folding>
@@ -83,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shareapp/form.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            <state relative-caret-position="108">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -95,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shareapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="144">
               <caret line="18" column="18" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="18" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
@@ -155,8 +154,8 @@
         <option value="$PROJECT_DIR$/templates/category.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/shareapp/urls.py" />
-        <option value="$PROJECT_DIR$/shareapp/form.py" />
         <option value="$PROJECT_DIR$/templates/create.html" />
+        <option value="$PROJECT_DIR$/shareapp/form.py" />
         <option value="$PROJECT_DIR$/shareapp/views.py" />
       </list>
     </option>
@@ -275,7 +274,7 @@
       <workItem from="1558890625831" duration="1438000" />
       <workItem from="1558892100116" duration="4195000" />
       <workItem from="1558898628959" duration="5000" />
-      <workItem from="1558981961279" duration="957000" />
+      <workItem from="1558981961279" duration="2007000" />
     </task>
     <task id="LOCAL-00001" summary="added models">
       <created>1558805802854</created>
@@ -375,11 +374,18 @@
       <option name="project" value="LOCAL" />
       <updated>1558897882435</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added create view">
+      <created>1558983062407</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1558983062407</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26751000" />
+    <option name="totallyTimeSpent" value="27696000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -392,14 +398,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.118003026" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.118003026" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.17021276" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.31096563" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -458,7 +463,8 @@
     <MESSAGE value="added pagination" />
     <MESSAGE value="fixed category issue" />
     <MESSAGE value="added search function" />
-    <option name="LAST_COMMIT_MESSAGE" value="added search function" />
+    <MESSAGE value="added create view" />
+    <option name="LAST_COMMIT_MESSAGE" value="added create view" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/shareapp/admin.py">
@@ -564,7 +570,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shareapp/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="144">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="18" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
@@ -574,8 +580,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shareapp/form.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
@@ -591,8 +597,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shareapp/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="77" column="35" selection-start-line="77" selection-start-column="35" selection-end-line="77" selection-end-column="35" />
+        <state relative-caret-position="193">
+          <caret line="84" column="26" lean-forward="true" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="26" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
           </folding>

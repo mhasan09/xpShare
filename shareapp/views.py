@@ -76,9 +76,12 @@ def getLogout(request):
 
 def getCreate(request):
    if request.user.is_authenticated:
+       u=get_object_or_404(Author,name=request.user.id)
        form = createArticle(request.POST or None, request.FILES or None)
        if form.is_valid():
+
            instance = form.save(commit=False)
+           instance.article_author = u
            instance.save()
            return redirect('index')
 
