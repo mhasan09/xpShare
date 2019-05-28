@@ -37,7 +37,7 @@
 
                         <td>{{ p.title }}</td>
                         <td>{{ p.posted_on }}</td>
-                        <td><a href=" "><button class="btn btn-warning btn-sm">Edit</button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href=" "><button class="btn btn-danger btn-sm">Delete</button></a></td>
+                        <td><a href="{% url 'update' id=p.id%} "><button class="btn btn-warning btn-sm">Edit</button></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{% url 'delete' id=p.id%} "><button class="btn btn-danger btn-sm">Delete</button></a></td>
 
                 </tr>
              {% endfor %}

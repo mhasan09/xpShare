@@ -25,7 +25,10 @@ urlpatterns = [
     path('login',getLogin, name = 'login'),
     path('logout',getLogout, name = 'logout'),
     path('create',getCreate, name = 'create'),
-    path('profile',getSeperateProfile, name = 'profile')
+    path('profile',getSeperateProfile, name = 'profile'),
+    path('update/<int:id>',getUpdate, name = 'update'),
+    path('delete/<int:id>',getDelete, name = 'delete'),
+
 
 
 

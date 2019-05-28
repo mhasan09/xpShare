@@ -96,3 +96,28 @@ def getSeperateProfile(request):
         return render(request,'logged_in_profile.html',{"post" : post , "user": user})
     else:
         return redirect('login')
+
+def getUpdate(request ,id):
+   if request.user.is_authenticated:
+       u=get_object_or_404(Author,name=request.user.id)
+       post = get_object_or_404(Article,id=id)
+       form = createArticle(request.POST or None, request.FILES or None, instance= post)
+       if form.is_valid():
+
+           instance = form.save(commit=False)
+           instance.article_author = u
+           instance.save()
+           return redirect('profile')
+
+       return render(request, 'create.html', {'form': form})
+   else:
+       return redirect('login')
+
+def getDelete(request ,id):
+   if request.user.is_authenticated:
+       post = get_object_or_404(Article,id=id)
+       post.delete()
+       return redirect('profile')
+
+   else:
+       return redirect('login')
