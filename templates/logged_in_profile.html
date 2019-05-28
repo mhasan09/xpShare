@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 {% block title %}{% endblock %}
-{% block stylesheet %}{% endblock %}
+{% block stylesheet %}
+    <style>
+        .alert{
+            height: 50px;
+            margin-top: 200px;
+            width: 460px;
+        }
+    </style>
+{% endblock %}
 {% block profile %}
+
      <div class="fh5co-bio">
 			<figure>
 				<img src="{{ user.profile_picture.url }}" alt="Free HTML5 Bootstrap Template" class="img-responsive">
@@ -22,7 +31,15 @@
 {% endblock %}
 {% block content %}
     <div class="container">
+      {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
         <a href="{% url 'create' %}"><button class="btn btn-success pull-left">Add new article</button></a>
+
         <table class="table table-hover">
             <thead>
                  <tr>

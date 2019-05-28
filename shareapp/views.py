@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.db.models import Q
 from .form import createArticle
+from django.contrib import messages
 
 # Create your views here.
 def getIndex(request):
@@ -68,6 +69,9 @@ def getLogin(request):
             if auth is not None:
                 login(request, auth)
                 return redirect('index')
+            else:
+                messages.add_message(request,messages.ERROR,"Username or Password mismatch")
+                return render(request, "login.html")
     return render(request, "login.html")
 
 def getLogout(request):
@@ -107,6 +111,7 @@ def getUpdate(request ,id):
            instance = form.save(commit=False)
            instance.article_author = u
            instance.save()
+           messages.add_message(request, messages.SUCCESS, "Post has been updated")
            return redirect('profile')
 
        return render(request, 'create.html', {'form': form})
@@ -117,6 +122,7 @@ def getDelete(request ,id):
    if request.user.is_authenticated:
        post = get_object_or_404(Article,id=id)
        post.delete()
+       messages.add_message(request, messages.WARNING, "Post has been Deleted")
        return redirect('profile')
 
    else:
