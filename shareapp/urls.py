@@ -25,6 +25,8 @@ urlpatterns = [
     path('login',getLogin, name = 'login'),
     path('logout',getLogout, name = 'logout'),
     path('create',getCreate, name = 'create'),
+    path('profile',getSeperateProfile, name = 'profile')
+
 
 
 ]
