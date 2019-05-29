@@ -28,6 +28,7 @@ urlpatterns = [
     path('profile',getSeperateProfile, name = 'profile'),
     path('update/<int:id>',getUpdate, name = 'update'),
     path('delete/<int:id>',getDelete, name = 'delete'),
+    path('register',getRegister, name = 'register'),
 
 
 

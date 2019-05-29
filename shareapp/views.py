@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.db.models import Q
-from .form import createArticle,createRegisterUser
+from .form import createArticle, createRegisterUser, createAuthor
 from django.contrib import messages
 
 
@@ -96,13 +96,24 @@ def getCreate(request):
 
 def getSeperateProfile(request):
     if request.user.is_authenticated:
-        user = get_object_or_404(Author,name = request.user.id)
-        post = Article.objects.filter(article_author=user.id)
-        return render(request,'logged_in_profile.html',{"post" : post , "user": user})
+        user = get_object_or_404(User,id=request.user.id)
+        author_profile=Author.objects.filter(name=user.id)
+        if author_profile:
+            author_user = get_object_or_404(Author,name = request.user.id)
+            post = Article.objects.filter(article_author=author_user.id)
+            return render(request, 'logged_in_profile.html', {"post": post, "user": author_user})
+        else:
+            form = createAuthor(request.POST or None, request.FILES or None)
+            if form.is_valid():
+                instance = form.save(commit=False)
+                instance.name = user
+                instance.save()
+                return redirect('profile')
+            return render(request, 'createAuthor.html', {"form": form})
     else:
         return redirect('login')
 
-def getUpdate(request ,id):
+def getUpdate(request,id):
    if request.user.is_authenticated:
        u=get_object_or_404(Author,name=request.user.id)
        post = get_object_or_404(Article,id=id)
