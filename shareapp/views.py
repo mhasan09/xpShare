@@ -4,8 +4,9 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.db.models import Q
-from .form import createArticle
+from .form import createArticle,createRegisterUser
 from django.contrib import messages
+
 
 # Create your views here.
 def getIndex(request):
@@ -127,3 +128,12 @@ def getDelete(request ,id):
 
    else:
        return redirect('login')
+
+def getRegister(request):
+    form = createRegisterUser(request.POST or None)
+    if form.is_valid():
+        instance= form.save(commit=False)
+        instance.save()
+        messages.SUCCESS(request,"Registration Successfully Completed")
+        return redirect('login')
+    return render(request,'register.html',{"form" : form})
