@@ -1,10 +1,10 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import Article,Author,Category
+from .models import Article,Author,Category, Comment
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.db.models import Q
-from .form import createArticle, createRegisterUser, createAuthor
+from .form import createArticle, createRegisterUser, createAuthor, commentForm
 from django.contrib import messages
 
 
@@ -37,18 +37,26 @@ def getProfile(request,name):
     }
     return render(request, "profile.html",context)
 
-def getSingle(requests, id):
+def getSingle(request, id):
     post = get_object_or_404(Article, pk=id)
     first = Article.objects.first()
     last = Article.objects.last()
+    getComment = Comment.objects.filter(post = id)
     related = Article.objects.filter(category=post.category).exclude(id=id)[:4]
+    form = commentForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.post = post
+        instance.save()
     context = {
         "post" : post,
         "first" : first,
         "last" : last,
-        "related" : related
+        "related" : related,
+        "form" : form,
+        "comment" : getComment
     }
-    return render(requests, "single.html", context)
+    return render(request, "single.html", context)
 
 def getTopic(request, name):
     cat = get_object_or_404(Category,name=name)
